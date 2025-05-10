@@ -5,3 +5,5 @@ nlpaug
 scikit-learn
 pandas
 tensorboard
+matplotlib
+seaborn
