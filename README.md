@@ -16,20 +16,11 @@ pip install -r requirements.txt
 
 ## Usage
 
+Run all cells in ```informative_tweet_classifier.ipynb``` from top to bottom.
 - Loads and tokenizes `train.tsv`, `valid.tsv`, and `test.tsv`
 - Trains on the combined train+valid data
 - Evaluates on the test set
 - Generates predictions and saves `prediction.csv`
-
-### Option 1: Python Script
-Train and evaluate the model:
-
-```bash
-python main.py
-```
-
-### Option 2: Jupyter Notebook
-Run all cells in ```informative_tweet_classifier.ipynb``` from top to bottom.
 
 
 
