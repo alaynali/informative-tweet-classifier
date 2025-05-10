@@ -16,6 +16,11 @@ pip install -r requirements.txt
 
 ## Usage
 
+- Loads and tokenizes `train.tsv`, `valid.tsv`, and `test.tsv`
+- Trains on the combined train+valid data
+- Evaluates on the test set
+- Generates predictions and saves `prediction.csv`
+
 ### Option 1: Python Script
 Train and evaluate the model:
 
@@ -27,8 +32,4 @@ python main.py
 Run all cells in ```informative_tweet_classifier.ipynb``` from top to bottom.
 
 
-The script:
-- Loads and tokenizes `train.tsv`, `valid.tsv`, and `test.tsv`
-- Trains on the combined train+valid data
-- Evaluates on the test set
-- Generates predictions and saves `prediction.csv`
+
