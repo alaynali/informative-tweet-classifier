@@ -1,7 +1,6 @@
 # === imports ===
 import os, random, numpy as np, torch
 from collections import Counter
-from accelerate.utils.memory import release_memory
 
 # data
 import pandas as pd
@@ -42,9 +41,9 @@ def load_tsv(path):
     df['label'] = df['Label'].map({'INFORMATIVE': 1, 'UNINFORMATIVE': 0})
     return Dataset.from_pandas(df[['Text', 'label']])
 
-train_dataset = load_tsv("/content/data/train.tsv")
-valid_dataset = load_tsv("/content/data/valid.tsv")
-test_dataset = load_tsv("/content/data/test.tsv")
+train_dataset = load_tsv("./data/train.tsv")
+valid_dataset = load_tsv("./data/valid.tsv")
+test_dataset = load_tsv("./data/test.tsv")
 
 print(Counter(train_dataset["label"]))
 print(Counter(valid_dataset["label"]))
@@ -135,7 +134,7 @@ trainer.save_model("./final_model")
 print("Training complete. Final model saved to './final_model'")
 
 # === prediction and evaluation ===
-test_df = pd.read_csv("/content/data/test.tsv", sep="\t")
+test_df = pd.read_csv("./data/test.tsv", sep="\t")
 test_df["label"] = test_df["Label"].map({"UNINFORMATIVE": 0, "INFORMATIVE": 1})
 test_ds = Dataset.from_pandas(test_df)
 
