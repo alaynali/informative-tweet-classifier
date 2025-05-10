@@ -16,11 +16,16 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Option 1: Python Script
 Train and evaluate the model:
 
 ```bash
 python main.py
 ```
+
+### Option 2: Jupyter Notebook
+Run all cells in ```informative_tweet_classifier.ipynb``` from top to bottom.
+
 
 The script:
 - Loads and tokenizes `train.tsv`, `valid.tsv`, and `test.tsv`
