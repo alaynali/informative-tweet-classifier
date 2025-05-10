@@ -5,7 +5,6 @@ This project fine-tunes a Transformer-based model to classify English COVID-19-r
 ## Features
 
 - Binary classification using `transformers` and HuggingFace models
-- Data augmentation with `nlpaug`
 - Evaluation on test set with accuracy and F1 score
 - Outputs Kaggle-compatible `prediction.csv`
 
