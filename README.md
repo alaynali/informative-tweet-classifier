@@ -1,14 +1,13 @@
-# Tweet Classification with Transformers and Augmentation
+# Informative Tweet Classifier
 
-This repository fine-tunes a HuggingFace Transformer model on a custom text classification dataset using augmentation techniques and Optuna hyperparameter search.
+This project fine-tunes a Transformer-based model to classify English COVID-19-related tweets as either **INFORMATIVE** or **UNINFORMATIVE**. It is based on the WNUT-2020 shared task dataset and developed as part of an ECE 364 project.
 
 ## Features
 
-- Text classification using `transformers`
+- Binary classification using `transformers` and HuggingFace models
 - Data augmentation with `nlpaug`
-- Hyperparameter tuning with `optuna`
-- Evaluation with accuracy and F1 score
-- TensorBoard logging support
+- Evaluation on test set with accuracy and F1 score
+- Outputs Kaggle-compatible `prediction.csv`
 
 ## Setup
 
@@ -18,16 +17,14 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the main script:
+Train and evaluate the model:
 
 ```bash
 python main.py
 ```
 
-Make sure to place your dataset in the script or adjust the file paths accordingly.
-
-## Notes
-
-- Tokenizer and model are loaded using HuggingFace Hub.
-- Augmentation uses WordNet-based synonym replacement.
-- Tuning uses Optuna for learning rate, batch size, and weight decay.
+The script:
+- Loads and tokenizes `train.tsv`, `valid.tsv`, and `test.tsv`
+- Trains on the combined train+valid data
+- Evaluates on the test set
+- Generates predictions and saves `prediction.csv`
