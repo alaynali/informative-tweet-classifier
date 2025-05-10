@@ -56,7 +56,7 @@ tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSequenceClassification.from_pretrained(checkpoint, num_labels=2)
 model.to(device)
 
-# limit: 30 million parameters
+# 30 million parameters limit
 print("Trainable params:", sum(p.numel() for p in model.parameters() if p.requires_grad))
 
 def tokenize(batch):
