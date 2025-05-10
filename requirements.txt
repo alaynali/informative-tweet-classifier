@@ -1,0 +1,7 @@
+transformers
+datasets
+optuna
+nlpaug
+scikit-learn
+pandas
+tensorboard
