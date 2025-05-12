@@ -44,6 +44,9 @@ Run all cells in ```informative_tweet_classifier.ipynb``` from top to bottom.
 - Generates predictions and saves `prediction.csv`
 
 NOTE:
+- The original data was edited so that train, test and valid contain data labels for each column. The data in this repository has been updated as such. If using unlabelled data, you will need to change the call to ```pd.read_csv``` to this:
+
+```df = pd.read_csv(path, sep='\t', header=None, names=["Id", "Text", "Label"])```
 
 - If you want to train only on `train.tsv` and validate on `valid.tsv` simply change the flags in trainer constructor from:
 
